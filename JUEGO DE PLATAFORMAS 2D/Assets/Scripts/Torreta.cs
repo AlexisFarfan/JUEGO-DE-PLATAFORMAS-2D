@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Torreta : MonoBehaviour
 {
-    Transform player;
+    [SerializeField] Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Robot").transform;
     }
 
     // Update is called once per frame
@@ -23,5 +23,10 @@ public class Torreta : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         //AUTOR: JORGE SÁNCHEZ
+    }
+
+    void Disparar()
+    {
+        print("fuego");
     }
 }

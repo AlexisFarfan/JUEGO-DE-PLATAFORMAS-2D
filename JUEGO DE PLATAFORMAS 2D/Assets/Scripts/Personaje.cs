@@ -29,7 +29,7 @@ public class Personaje : MonoBehaviour
     {
         //animator.SetFloat("Velocidad", velocidad);
 
-        if (Input.GetKey("space") && Checkground.isGrounded) 
+        if (Input.GetKeyDown("space") && Checkground.isGrounded) 
         {
             anim.SetTrigger("Saltar");
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
