@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColiderPers : MonoBehaviour
 {
-    BoxCollider2D bc;
+    CapsuleCollider2D bc;
     bool isCrouched = false;
     Animator animator;
     
@@ -15,7 +15,7 @@ public class ColiderPers : MonoBehaviour
 
         animator = GetComponent<Animator>();
         //Obtenemos el BoxClollider y ponemos los datos iniciales
-        bc = GetComponent<BoxCollider2D>();
+        bc = GetComponent<CapsuleCollider2D>();
         bc.offset = new Vector2(0f, 1.2f);
         bc.size = new Vector2(1f, 2.1f);
     }
@@ -44,5 +44,7 @@ public class ColiderPers : MonoBehaviour
             //Decimos que está agachado para que no se ejecute más
             isCrouched = false;
         }
+
+       
     }
 }

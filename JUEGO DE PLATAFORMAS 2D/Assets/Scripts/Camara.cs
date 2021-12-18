@@ -6,7 +6,7 @@ public class Camara : MonoBehaviour
 {
     [SerializeField] Transform playerPosition;
     //Variables necesarias para la opción de suavizado
-    [SerializeField] float smoothVelocity = 0.3F;
+    [SerializeField] float smoothVelocity;
     [SerializeField] Vector3 camaraVelocity = Vector3.zero;
 
 

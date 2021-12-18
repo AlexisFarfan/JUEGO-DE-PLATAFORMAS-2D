@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Checkground : MonoBehaviour
 {
-    public static bool isGrounded;
+    public static bool isIdle;
+    [SerializeField] Animator anim;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isGrounded = true;
+        isIdle = true;
+        anim.SetBool("TocarSuelo", true);
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isGrounded = false;
+        isIdle = false;
+        anim.SetBool("TocarSuelo", false);
     }
 }
