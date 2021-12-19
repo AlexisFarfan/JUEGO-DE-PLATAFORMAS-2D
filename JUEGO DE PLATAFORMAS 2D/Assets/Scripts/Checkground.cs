@@ -12,12 +12,13 @@ public class Checkground : MonoBehaviour
     {
         isIdle = true;
         anim.SetBool("TocarSuelo", true);
-
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isIdle = false;
         anim.SetBool("TocarSuelo", false);
+       
     }
 }

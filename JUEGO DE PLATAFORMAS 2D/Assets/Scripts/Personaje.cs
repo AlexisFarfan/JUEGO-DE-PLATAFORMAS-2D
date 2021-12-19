@@ -5,12 +5,17 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     [Header("Componentes")]
-    [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb2d;
+
     [Header("Movimiento")]
     private float moveSpeed = 5;
+
     [Header("Salto")]
     private float jumpforce = 8;
+
+    [Header("Animator")]
+    [SerializeField] Animator anim;
+
     [Header("Grounded")]
     private bool isGrounded;
     public Transform groundChheckPoint;
@@ -20,8 +25,8 @@ public class Personaje : MonoBehaviour
     void Start()
     {
         
-        anim = gameObject.GetComponent<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();  
         moveSpeed = 5f;
         
 
@@ -41,8 +46,8 @@ public class Personaje : MonoBehaviour
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
             }
             anim.SetTrigger("Saltar");
+            moveSpeed = 0;
             
-             
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -67,6 +72,7 @@ public class Personaje : MonoBehaviour
             anim.SetBool("Correr", true);
             rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
             moveSpeed = 10f;
+            
         }
 
         else
@@ -74,7 +80,7 @@ public class Personaje : MonoBehaviour
             anim.SetBool("Correr", false);
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
-
+         
     }
     private void FixedUpdate()
     {
@@ -86,6 +92,7 @@ public class Personaje : MonoBehaviour
         //Redondeamos la velocidad para pasarlo al parámetro del animator
         moveSpeed = Mathf.Abs(rb2d.velocity.x);
         anim.SetFloat("Velocidad", moveSpeed);
+        
     }
 
 
