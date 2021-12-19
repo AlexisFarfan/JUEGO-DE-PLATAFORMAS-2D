@@ -27,7 +27,7 @@ public class Camara : MonoBehaviour
     {
         //transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         // transform.position = new Vector3(playerPosition.position.x, 0, playerPosition.position.z - 10);
-        transform.position = new Vector3(target.position.x, target.position.y, target.position.z -1);
+        transform.position = new Vector3(target.position.x, target.position.y + 3, target.position.z -1);
 
         float amountToMoveX = transform.position.x - lastXPos;
         float amonuntToMoveY = transform.position.y - lastYPos;
