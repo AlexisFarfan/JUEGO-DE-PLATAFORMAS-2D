@@ -47,7 +47,6 @@ public class ColiderPers : MonoBehaviour
             isCrouched = false;
         }
 
-       
     }
    
 }
