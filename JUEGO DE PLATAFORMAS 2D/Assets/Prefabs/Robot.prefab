@@ -125,7 +125,7 @@ MonoBehaviour:
   groundChheckPoint: {fileID: 6038812914756948645}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
 --- !u!70 &6038812914065467288
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
